@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom'
 const Navigation = () => {
 	return (
 		<div>
-			<nav>
-					<h3>Logo</h3>
-				<ul>
-					<Link to="/"><li>Home</li></Link>
-					<Link to="/login"><li>Login</li></Link>
-					<Link to="/signup"><li>Sign Up</li></Link>
-				</ul>
+			<nav className='navigation-bar'>
+					<a href='#' style={{color: 'white'}}><Link to="/home">Home</Link></a>
+					<a href='#' style={{color: 'white'}}><Link to="/login">Login</Link></a>
+					<a href='#' style={{color: 'white'}}><Link to="/signup">Sign Up</Link></a>
+					<a href='#' style={{color: 'white'}}><Link to="/MyReservations">My Reservations</Link></a>
+					<a href='#' style={{color: 'white'}}><Link to="/signout">Sign Out</Link></a>
 			</nav>
 		</div>
 	);
