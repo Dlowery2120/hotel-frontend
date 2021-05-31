@@ -10,7 +10,7 @@ const Navigation = () => {
 					<a href='#' style={{color: 'white'}}><Link to="/login">Login</Link></a>
 					<a href='#' style={{color: 'white'}}><Link to="/signup">Sign Up</Link></a>
 					<a href='#' style={{color: 'white'}}><Link to="/MyReservations">My Reservations</Link></a>
-					<a href='#' style={{color: 'white'}}><Link to="/signout">Sign Out</Link></a>
+					<a href='#' style={{color: 'white'}} onClick={()=>localStorage.clear()}><Link to="/signout">Sign Out</Link></a>
 			</nav>
 		</div>
 	);

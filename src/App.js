@@ -71,7 +71,7 @@ class App extends React.Component {
 			body: JSON.stringify(bookingObj)
 		};
 		fetch('http://localhost:3000/api/v1/bookings', reqPackage).then((res) => res.json()).then((newBooking) => {
-			this.setState({ myReservations: [ ...this.state.bookings, newBooking ] });
+			this.setState({ myReservations: [ ...this.state.myReservations, newBooking ] });
 			console.log(newBooking, 'newBooking after post in App.js');
 		});
 	};
@@ -154,7 +154,7 @@ class App extends React.Component {
 			<div className="App">
 				<Router>
 					<Navigation />
-					<WelcomeHeader />
+					{/* <WelcomeHeader /> */}
 
 					<Switch>
 						<Route
@@ -193,7 +193,7 @@ class App extends React.Component {
 							path="/MyReservations"
 							render={(props) => (
 								<MyReservations
-									bookings={this.state.bookings}
+									myReservations={this.state.myReservations}
 									currentUser={this.state.currentUser}
 								/>
 							)}
