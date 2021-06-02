@@ -1,37 +1,15 @@
 import React from 'react';
 
 const ReservationCard = (props) => {
-	return (
-		//     <div>
-		//         <h1>My Reservations</h1>
-		// <table style={{width:"100%"}}>
-		//   <tr >
-		//     <th style={{width: '12%'}}>Name</th>
-		//     <th style={{width: '12%'}}>Reservation</th>
-		//     <th style={{width: '12%'}}>Check-in</th>
-		//     <th style={{width: '12%'}}>Check-out</th>
-		//     <th style={{width: '12%'}}>Suite</th>
-		//     <th style={{width: '12%'}}>Price</th>
-		//     <th style={{width: '12%'}}>Room</th>
-		//   </tr>
-		//   <tr>
-		//     <td style={{width: '12%'}}>{props.currentUser.user.first_name} {props.currentUser.user.last_name}</td>
-		//     <td style={{width: '12%'}}>{props.reservation.reservation_number}</td>
-		//     <td style={{width: '12%'}}>{props.reservation.check_in}</td>
-		//     <td style={{width: '12%'}}>{props.reservation.check_out}</td>
-		//     <td style={{width: '12%'}}>{props.reservation.room.suite}</td>
-		//     <td style={{width: '12%'}}>${props.reservation.room.price}</td>
-		//     <td style={{width: '12%'}}>{props.reservation.room.room_num}</td>
-		//   </tr>
-		// </table>
-		//     </div>
+	const deleteHandler = (e) => {
+		props.deleteRes(props.reservation.id)
+	}
+		return (
 		<div className="container">
 			<div className="top" style={{
-                backgroundImage: `url(${props.reservation.room.img})`
+                backgroundImage: `url(${props.reservation.room ? props.reservation.room.img : null})`
             }}/>
          
-
-           
 			<div className="bottom">
 				<h1>The Best Hotel</h1>
 
@@ -45,7 +23,8 @@ const ReservationCard = (props) => {
 				<p>${props.reservation.room.price}</p>
 				<h2>Reservation</h2>
 				<p>{props.reservation.reservation_number}</p>
-			
+				<a className='styled-btn'>Change Reservation</a>
+				<a className='styled-btn' onClick={(e)=> deleteHandler(e)}>Delete</a>
 			</div>
 		</div>
 	);

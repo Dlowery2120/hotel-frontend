@@ -31,16 +31,16 @@ class Hotel extends React.Component {
 			 		<h1>{this.props.hotel.name}</h1>
 	
 			 		<h2> Address</h2>
-			 		<p> 123 Bdot Lane</p>
+			 		<p>{this.props.hotel.address}</p>
 			 		<h2>Location</h2>
 			 		<p>{this.props.hotel.location}</p>
 			 		<h2>Stars</h2>
-			 		<p> 4.5</p>
-			 		<p>View More Details</p>
+			 		<p>{this.props.hotel.stars}</p>
+			 		<a className='styled-btn'>Select Hotel</a>
 
 				
 			 	</div>
-			{this.state.redirectOrNaw ? <Redirect to='/CreateReservation'></Redirect> : null}
+			{this.state.redirectOrNaw ? <Redirect to='/CreateReservation'/> : null}
 			 </div>
 	);
     }

@@ -149,6 +149,20 @@ class App extends React.Component {
 			.then((res) => res.json())
 			.then((data) => this.setState({ ...this.state.users, user }));
 	};
+
+	deleteRes = (deletedReservation) => {
+		fetch(`http://localhost:3000/api/v1/bookings/${deletedReservation}`, {
+			method: 'DELETE'
+	})
+	.then(()=>{
+		this.setState({
+		  myReservations: [...this.state.myReservations.filter(reservation => reservation.id !== deletedReservation)]
+		})
+	  })
+
+	console.log(deletedReservation)
+			
+	}
 	render() {
 		return (
 			<div className="App">
@@ -195,6 +209,7 @@ class App extends React.Component {
 								<MyReservations
 									myReservations={this.state.myReservations}
 									currentUser={this.state.currentUser}
+									deleteRes={this.deleteRes}
 								/>
 							)}
 						/>
