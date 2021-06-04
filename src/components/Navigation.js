@@ -1,20 +1,42 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 // import { Nav } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
+import { Link, Redirect } from 'react-router-dom';
 const Navigation = () => {
 	return (
 		<div>
 			<nav>
-					<h3>Logo</h3>
+				<div class="logo">
+					<h2>Bookie</h2>
+				</div>
+
 				<ul>
-					<Link to="/"><li>Home</li></Link>
-					<Link to="/login"><li>Login</li></Link>
-					<Link to="/signup"><li>Sign Up</li></Link>
+					<li>
+					<a href='#'><Link to="/home">Home</Link></a>
+					</li>
+					<li>
+					<a href='#'><Link to="/MyReservations">My Reservations</Link></a>
+					</li>
+					<li>
+					<a href='#'><Link to="/login">Login</Link></a>
+					</li>
+					<li>
+					<a href='#'><Link to="/signup">SignUp</Link></a>
+					</li>
+					<li>
+					<a href='#' onClick={()=>localStorage.clear() && this.props.history.push('/login')}><Link to="/login">Sign Out</Link></a>
+					</li>
 				</ul>
+				<div class="menu-bars" id="toggle">
+					<input type="checkbox" />
+					<span />
+					<span />
+					<span />
+				</div>
 			</nav>
 		</div>
 	);
 };
 
-export default Navigation;
+export default withRouter(Navigation);
