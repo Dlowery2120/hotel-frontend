@@ -1,33 +1,69 @@
 import React from 'react';
 
-const ReservationCard = (props) => {
-	const deleteHandler = (e) => {
-		props.deleteRes(props.reservation.id)
+class ReservationCard extends React.Component {
+	state = {
+		display: false
 	}
-		return (
+	deleteHandler = (e) => {
+		this.props.deleteRes(this.props.reservation.id)
+	}
+	displayForm = (e) => {
+		
+		this.setState({display: !this.state.display})
+	}
+	handleSubmit = (e) => {
+		e.preventDefault()
+		this.props.updateRes(this.props.reservation, e)
+		this.displayForm()
+	}
+
+	changeHandler = (e) => {
+		this.setState({[e.target.name] : e.target.value})
+		console.log(e.target.name, e.target.value)
+	}
+
+
+render() {
+			return (
 		<div className="container">
 			<div className="top" style={{
-                backgroundImage: `url(${props.reservation.room ? props.reservation.room.img : null})`
+                backgroundImage: `url(${this.props.reservation.room ? this.props.reservation.room.img : null})`
             }}/>
          
 			<div className="bottom">
-				<h1>The Best Hotel</h1>
-
+				<h1>Reserved</h1>
+			
 				<h2> Check-in date</h2>
-				<p>{props.reservation.check_in} at 3:00 PM</p>
+				<p>{this.props.reservation.check_in} at 3:00 PM</p>
 				<h2>Check-out date</h2>
-				<p>{props.reservation.check_out} at 12:00 PM</p>
+				<p>{this.props.reservation.check_out} at 12:00 PM</p>
 				<h2>Room</h2>
-				<p>{props.reservation.room.suite}</p>
+				<p>{this.props.reservation.room.suite}</p>
 				<h2>Price</h2>
-				<p>${props.reservation.room.price}</p>
+				<p>${this.props.reservation.room.price}</p>
 				<h2>Reservation</h2>
-				<p>{props.reservation.reservation_number}</p>
-				<a className='styled-btn'>Change Reservation</a>
-				<a className='styled-btn' onClick={(e)=> deleteHandler(e)}>Delete</a>
+				<p>{this.props.reservation.reservation_number}</p>
+				{
+				!this.state.display
+				 ? 
+				 <a className='styled-btn' onClick={(e)=>this.displayForm(e)}>Change Reservation</a>
+				: 
+				<div>
+					<a className='styled-btn' onClick={(e)=> this.displayForm(e)}>Change Reservation</a>
+				
+				<form onSubmit={(e)=>this.handleSubmit(e)}>
+					<input type='date' name='check_in' onChange={(e)=>this.changeHandler}></input>
+					<input type='date' name='check_out' onChange={(e)=>this.changeHandler}></input>
+					<input className='styled-submit' type='submit'></input>
+				</form>
+				</div>
+				}
+				<a className='styled-btn' onClick={(e)=> this.deleteHandler(e)}>Delete</a>
 			</div>
 		</div>
 	);
+}
+
 };
 
 export default ReservationCard;

@@ -15,11 +15,6 @@ class Hotel extends React.Component {
 	};
     render() {
         	return (
-		// <div>
-		// 	<h4>{this.props.hotel.name}</h4>
-		// 	<img src={this.props.hotel.img} style={{ width: '200px', height: '200px' }} onClick={(e) => this.handleClick(e)}></img>
-		// 	{this.state.redirectOrNaw ? <Redirect to='/CreateReservation'></Redirect> : null}
-		// </div>
 			 	<div className="container" onClick={(e) => this.handleClick(e)}>
 			 	<div className="top" style={{
 			 		backgroundImage: `url(${this.props.hotel.img})`

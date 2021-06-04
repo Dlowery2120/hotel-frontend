@@ -4,9 +4,9 @@ import ReservationCard from './ReservationCard'
 class MyReservations extends React.Component {
     render() {
             return(
-    <div>
-        <h1 style={{color: 'black'}}>My Reservations</h1>
-        {this.props.myReservations.map(reservation => <ReservationCard key={reservation.id} reservation={reservation} deleteRes={this.props.deleteRes}/>)}
+    <div className='myReservation'>
+        <h1>My Reservations</h1>
+        {this.props.myReservations.map(reservation => <ReservationCard key={reservation.id} reservation={reservation} updateRes={this.props.updateRes} deleteRes={this.props.deleteRes}/>)}
     </div>
     )
     }

@@ -4,17 +4,138 @@
 
 body {
   font-family: 'Newsreader', serif;
-}
+  background: url("https://images.unsplash.com/photo-1520462374865-cbc28f0b5150?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
 #thumbs {   
   /* width: 540px; */
   /* margin-top:90px; */
-  margin-left: auto; 
-  margin-right: auto;
+  margin-left: 10%; 
+  margin-right: 10%;
 
    /* text-align: justify; */
   -ms-text-justify: distribute-all-lines;
   text-justify: distribute-all-lines;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+*{
+ margin:0;
+ padding:0;
+}
+
+nav{
+display:flex;
+background-color: hsl(0, 0%, 0%);
+justify-content: space-around;
+padding:20px 0;
+margin-bottom: 20px;
+color:rgb(255, 254, 254);
+
+align-items: center;
+}
+nav.logo{
+letter-spacing: 3px;
+}
+nav ul{
+display:flex;
+list-style: none;
+width:40%;
+justify-content: space-between;
+}
+nav ul li a {
+  color:rgb(255, 254, 254);
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.btn{
+border-radius: 40px;
+}
+/*Hamburger */
+.menu-bars{
+display:none;
+flex-direction: column;
+height:20px;
+justify-content: space-between;
+position:relative;
+  z-index:999;
+}
+.menu-bars input{
+position: absolute;
+width:40px;
+height:28px;
+left:-5px;
+top:-3px;
+opacity: 0;
+cursor:pointer;
+z-index: 2;
+}
+
+.menu-bars span{
+display:block;
+width:28px;
+height:3px;
+background-color:rgb(255, 254, 254);
+border-radius: 3px;
+transition: all 0.3s;
+}
+
+.menu-bars span:nth-child(2){
+transform-origin: 0 0 ;
+}
+
+.menu-bars span:nth-child(4){
+  transform-origin: 0 100% ;
+  }
+
+.menu-bars input:checked ~ span:nth-child(2){
+background-color: white;
+transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-bars input:checked ~ span:nth-child(4){
+  background-color: white;
+  transform: rotate(-45deg) translate(-1px,0); 
+  }
+
+  .menu-bars input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0); 
+    }
+
+
+@media only screen and (max-width: 768px){
+nav ul{
+width:50%;
+}
+
+}
+
+@media only screen and (max-width: 576px){
+  .menu-bars{
+  display:flex;
+  }
+  nav ul{
+  position:absolute;
+  right:0;
+  top:0;
+  width:100%;
+  height:100vh;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(342, 96%, 50%);
+  z-index: 1;
+  transform: translateY(-100%);
+  transition: all 1s;
+  }
+  }
+  nav ul.slide{
+    transform: translateY(0);
+  }
+
 #thumbs a {
   vertical-align: top;
   display: inline-block;
@@ -27,45 +148,6 @@ body {
   display: inline-block;
   font-size: 0;
   line-height: 0
-}
-
-/* .navigation-bar ul {
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  display:inline-block;
-  vertical-align:top;
-} */
-
-.navigation-bar {
-    width: 100%;  /* i'm assuming full width */
-    height: 80px; /* change it to desired width */
-    background-color: black; /* change to desired color */
-}
-.logo {
-    display: inline-block;
-    vertical-align: top;
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
-}
-.navigation-bar > a {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-    height: 80px;        /* if you want it to take the full height of the bar */
-    line-height: 80px;    /* if you want it vertically middle of the navbar */
-}
-
-.banner {
-  width: 100%;
-  height: 600px;
-}
-
-.banner-img {
-  width: 100%;
-  height: 600px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@300&display=swap');
@@ -156,7 +238,6 @@ font-weight: 500;
 }
 .styled-submit{
   background: rgb(240, 26, 97);
-  padding: 15px 35px;
   border: none;
   outline: none;
   color: white;
@@ -167,21 +248,14 @@ font-weight: 500;
   margin: 10px 0;
   border-radius: 5px;
   transition: .3s ease;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
-
-
-
-/* div {
-  width: 200px;
-  height: 100px;
-  margin: 0 auto;
-} */
 input {
 
   height: 35px;
-  margin: auto;
+  /* margin: auto; */
+  margin-bottom: 20px;
   width: 40%;
   font-family: arial, sans-serif;
   font-size: 18px;
@@ -192,4 +266,85 @@ input {
   border-radius: 3px;
   padding: 0 3px;
   color: rgb(0, 0, 0);
+}
+
+/* .container{
+  position: relative;
+  width: 100%;  height: 100vh;
+  background: linear-gradient(180deg , #fff 0% 50%, #673ab7 50% 100%);
+} */
+.container .login{
+  position: absolute;
+  top: 50%;   left: 50%;
+  transform: translate(-50%,-50%);
+  width: 500px;
+  padding: 40px 20px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+  box-sizing: border-box;
+  background: #fff;
+}
+.container .login h1{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #726b6b;
+}
+.container .login form{
+  position: relative;
+}
+.container .login form .row{
+  position: relative;
+  margin: 40px 0;
+  width: 100%;
+}
+.container .login form .row input,.container .login form .row textarea{
+  position: relative;
+  border: none;   outline: none;
+  width: 100%;
+  padding: 6px 0;
+  border-bottom: 1px solid #726b6b;
+  font-size: 20px;
+  color: #726b6b;
+  background: transparent;
+}
+.container .login form .row span{
+  color: #726b6b;  background: transparent;
+  display: inline-block;
+  padding: 3px 10px;
+  position: absolute;
+  top: 8px;  left: 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  /* transition: .5s;
+  z-index: -1; */
+}
+.container .login form .row input:focus + span ,
+.container .login form .row textarea:focus + span,
+.container .login form .row input:valid + span ,
+.container .login form .row textarea:valid + span{
+  color: #fff;  background: #e91e63;
+  top: -20px;
+}
+.container .login form .row:last-child{
+  text-align: right;
+  margin: 20px 0;
+}
+.container .login form .row input[type = 'submit']{
+  width: auto;
+  border: none;
+  color: #fff;  background: #e91e63;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+form {
+  margin-right: 10%;
+  margin-left: 10%
+}
+
+.myReservation {
+  margin-left: 10%;
+  margin-right: 10%;
 }
