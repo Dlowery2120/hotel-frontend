@@ -75,7 +75,7 @@ class App extends React.Component {
 
 	renderSearch = (searchWords) => {
 		this.setState({
-			searchedHotels: this.state.allHotels.filter((hotel) => hotel.location.toLowerCase().includes(searchWords))
+			searchedHotels: this.state.allHotels.filter((hotel) => hotel.location.toLowerCase().includes(searchWords.toLowerCase()))
 		});
 	};
 
@@ -120,10 +120,17 @@ class App extends React.Component {
 			localStorage.setItem('token', data.token);
 			this.setState({
 				currentUser: data,
-				isLoggedIn: !this.state.isLoggedIn
+				isLoggedIn: true
 			});
 		});
 	};
+	handleLogOut = () => {
+		localStorage.clear()
+		this.setState({
+			isLoggedIn: false,
+			currentUser: {}
+		});
+	}
 
 	handleSignUp = (e) => {
 		e.preventDefault();
@@ -188,7 +195,8 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Router>
-					<Navigation />
+					<Navigation 
+						logout={this.handleLogOut} />
 					<Switch>
 						<Route exact path="/" />
 						<Route
@@ -198,6 +206,7 @@ class App extends React.Component {
 								<Home
 									currentUser={this.state.currentUser}
 									searchLocation={this.renderSearch}
+									logged_in={this.state.isLoggedIn}
 									hotels={
 										this.state.searchedHotels.length === 0 ? (
 											this.state.allHotels

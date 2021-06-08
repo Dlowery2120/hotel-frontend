@@ -2,14 +2,10 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 class SignUp extends React.Component {
-	state = {
-		redirect: false
-	}
-
 	handleSubmit = (e) => {
 		e.preventDefault()
 		this.props.signUp(e) 
-		this.props.logged_in ? this.props.history.push('/home') : this.props.history.push('/login')
+		this.props.history.push('/login')
 	}
 	render() {
 			return (
@@ -37,7 +33,7 @@ class SignUp extends React.Component {
 						<input type="submit" value="Join"/>
 					</div>
 				</form>
-			{this.props.logged_in ? this.props.history.push('/home'): this.props.history.push('/signup')}
+			{this.props.logged_in ? this.props.history.push('/home'): null}
 			</div>
 		</div>
 	);
@@ -46,23 +42,3 @@ class SignUp extends React.Component {
 };
 
 export default withRouter(SignUp);
-
-// <div>
-// 	<h1 style={{color: 'black'}}>SignUp</h1>
-// 	<form onSubmit={props.signUp}>
-// 		<label>First Name:</label>
-// 		<input type="text" />
-// 		<br />
-// 		<label>Last Name:</label>
-// 		<input type="text" />
-// 		<br />
-// 		<label>Username:</label>
-// 		<input type="text" />
-// 		<br />
-// 		<label>Password:</label>
-// 		<input type="password" />
-// 		<br />
-// 		<input type="submit" />
-// 	</form>
-// 	{props.logged_in ? <Redirect to="/home" /> : <Redirect to="/signup"/>}
-// </div>

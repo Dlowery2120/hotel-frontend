@@ -3,7 +3,11 @@ import { withRouter } from 'react-router-dom';
 // import { Nav } from 'react-bootstrap'
 
 import { Link, Redirect } from 'react-router-dom';
-const Navigation = () => {
+const Navigation = (props) => {
+	const handleClick = (e) => {
+		props.logout(e)
+	}
+	
 	return (
 		<div>
 			<nav>
@@ -25,7 +29,7 @@ const Navigation = () => {
 					<a href='#'><Link to="/signup">SignUp</Link></a>
 					</li>
 					<li>
-					<a href='#' onClick={()=>localStorage.clear() && this.props.history.push('/login')}><Link to="/login">Sign Out</Link></a>
+					<a href='#' onClick={(e)=>handleClick(e)}>Sign Out</a>
 					</li>
 				</ul>
 				<div class="menu-bars" id="toggle">

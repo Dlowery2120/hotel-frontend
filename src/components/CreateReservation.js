@@ -25,6 +25,7 @@ class CreateReservation extends React.Component {
 	render = () => {
 		return (
 			<div>
+				<h1>Create Reservation</h1>
 				<form onSubmit={this.handleSubmit}>
 					<input type="date" name="check_in" onChange={this.changeHandler} />
 					<input type="date" name="check_out" onChange={this.changeHandler} />
