@@ -8,6 +8,8 @@ const Login = (props) => {
 			<div className="login">
 				<h1>Login</h1>
 				<form onSubmit={props.login}>
+						<p>You may use "username" for example account</p>
+						<p>You may use "password" for example account</p>
 					<div className="row">
 						<input type="text" required />
 						<span>Username</span>
