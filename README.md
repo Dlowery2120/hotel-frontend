@@ -17,6 +17,7 @@ Edit/Delete only the posts written by the logged in user.
 
 ## Tech Stack
 This web app makes use of the following:
+
 React.js - Javascript Framework
 
 Ruby 
