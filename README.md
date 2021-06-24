@@ -22,7 +22,7 @@ React.js - Javascript Framework
 
 Ruby 
 
-Rails - MVC Web Framework
+Rails - Ruby Framework
 
 PostGreSQL - Database
 
