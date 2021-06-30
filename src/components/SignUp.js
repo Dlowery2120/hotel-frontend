@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 class SignUp extends React.Component {
 	handleSubmit = (e) => {
