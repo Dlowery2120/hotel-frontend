@@ -1,8 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-// import { Nav } from 'react-bootstrap'
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const Navigation = (props) => {
 	const handleClick = (e) => {
 		props.logout(e)
