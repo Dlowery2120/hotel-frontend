@@ -21,7 +21,6 @@ class Hotel extends React.Component {
 			 	}}/>
 			 
 	
-			   
 			 	<div className="bottom">
 			 		<h1>{this.props.hotel.name}</h1>
 	
