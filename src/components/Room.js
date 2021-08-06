@@ -12,8 +12,6 @@ const Room = (props) => {
 			backgroundImage: `url(${props.room.img}})`
 		}}/>
 	
-
-	  
 		<div className="bottom">
 			<h1>{props.room.suite}</h1>
 
@@ -24,15 +22,8 @@ const Room = (props) => {
 
 			<a className='styled-btn' onClick={(e) => clickHandler(e)}>Select Room</a>
 
-	   
 		</div>
 	</div>
-		// <div onClick={(e)=>clickHandler(e)}>
-		// 	<h3>Room#: {props.room.room_num}</h3>
-		// 	<h3>Price:${props.room.price}</h3>
-		// 	<h3>Suite:{props.room.suite}</h3>
-		// 	<img style={{ width: '200px', height: '200px' }} src={props.room.img} />
-		// </div>
 	);
 };
 
