@@ -22,7 +22,7 @@ class App extends React.Component {
 	};
 
 	componentDidMount = () => {
-		fetch('http://localhost:3000/api/v1/hotels', {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/hotels', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ class App extends React.Component {
 			.then((hotelData) => {
 				this.setState({ allHotels: hotelData });
 			});
-		fetch('http://localhost:3000/api/v1/rooms', {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/rooms', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ class App extends React.Component {
 			.then((roomData) => {
 				this.setState({ allRooms: roomData });
 			});
-		fetch('http://localhost:3000/api/v1/bookings', {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/bookings', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ class App extends React.Component {
 			},
 			body: JSON.stringify(bookingObj)
 		};
-		fetch('http://localhost:3000/api/v1/bookings', reqPackage).then((res) => res.json()).then((newBooking) => {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/bookings', reqPackage).then((res) => res.json()).then((newBooking) => {
 			this.setState({ myReservations: [ ...this.state.myReservations, newBooking ] });
 			console.log(newBooking, 'newBooking after post in App.js');
 		});
@@ -85,7 +85,7 @@ class App extends React.Component {
 	};
 
 	getUsers = () => {
-		fetch('http://localhost:3000/api/v1/users', {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/users', {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -116,7 +116,7 @@ class App extends React.Component {
 			body: JSON.stringify(user)
 		};
 
-		fetch('http://localhost:3000/api/v1/login', reqPackage).then((res) => res.json()).then((data) => {
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/login', reqPackage).then((res) => res.json()).then((data) => {
 			localStorage.setItem('token', data.token);
 			this.setState({
 				currentUser: data,
@@ -150,13 +150,13 @@ class App extends React.Component {
 			body: JSON.stringify(user)
 		};
 
-		fetch('http://localhost:3000/api/v1/users', reqPackage)
+		fetch('https://bookie-hotel-backend.herokuapp.com/api/v1/users', reqPackage)
 			.then((res) => res.json())
 			.then((data) => this.setState({ ...this.state.users, data }));
 	};
 
 	deleteRes = (deletedResId) => {
-		fetch(`http://localhost:3000/api/v1/bookings/${deletedResId}`, {
+		fetch(`https://bookie-hotel-backend.herokuapp.com/api/v1/bookings/${deletedResId}`, {
 			method: 'DELETE'
 		}).then(() => {
 			this.setState({
@@ -169,7 +169,7 @@ class App extends React.Component {
 
 	updateRes = (reservation, e) => {
 		console.log(e.target);
-		fetch(`http://localhost:3000/api/v1/bookings/${reservation.id}`, {
+		fetch(`https://bookie-hotel-backend.herokuapp.com/api/v1/bookings/${reservation.id}`, {
 			method: 'PATCH',
 			headers: {
 				'content-type': 'application/json',
