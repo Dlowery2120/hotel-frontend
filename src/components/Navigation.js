@@ -25,7 +25,7 @@ const Navigation = (props) => {
 					<a href='#'><Link to="/login">Login</Link></a>
 					</li>
 					<li>
-					<a href='#'><Link to="/signup">SignUp</Link></a>
+					<a href='#'><Link to="/signup">Sign Up</Link></a>
 					</li>
 					<li>
 					<a href='#' onClick={(e)=>handleClick(e)}>Sign Out</a>
