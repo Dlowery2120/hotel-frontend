@@ -179,6 +179,11 @@ h1{
   text-align: center;
   top : 0;
 }
+h4{
+  color: #ffffff;
+  text-align: center;
+  top : 0;
+}
 .bottom{
   color: #6897bb;
   display: flex;
@@ -483,4 +488,8 @@ input#sideMenuTrigger:not(:checked) ~ aside a {
 
 input#sideMenuTrigger:checked ~ label#view {
   opacity: 0;
+}
+
+.landing-img {
+  width: 80%
 }
