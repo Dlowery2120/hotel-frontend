@@ -51,13 +51,13 @@ render() {
 				<div>
 					<br/>
 					<br/>
-					<a className='styled-btn' onClick={(e)=> this.displayForm(e)}>Change Reservation</a>
+					<a className='styled-btn' onClick={(e)=> this.displayForm(e)}>Cancel Change</a>
 					
 				
 				<form onSubmit={(e)=>this.handleSubmit(e)}>
 					<br />
-					<input type='date' name='check_in' onChange={(e)=>this.changeHandler}></input>
-					<input type='date' name='check_out' onChange={(e)=>this.changeHandler}></input>
+					<input type='date' name='check_in' onChange={(e)=>this.changeHandler} required></input>
+					<input type='date' name='check_out' onChange={(e)=>this.changeHandler} required></input>
 					<input className='styled-submit' type='submit'></input>
 				</form>
 				</div>
