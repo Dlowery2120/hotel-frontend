@@ -4,7 +4,16 @@ import {withRouter} from 'react-router-dom';
 const Landing = (props) => {
     return (
         <div>
-            <h1>Landing</h1>
+            <div>
+               <h1> Bookie Landing </h1>  
+            </div>
+            <div>
+                <p>Hotel stuff</p>
+            </div>
+            <div>
+                <img></img>
+            </div>
+
         </div>
     )
 }

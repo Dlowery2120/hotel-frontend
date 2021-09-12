@@ -22,7 +22,7 @@ const Login = (props) => {
 						<input type="submit" value="Login" />
 					</div>
 				</form>
-				{props.logged_in ? <Redirect to="/home" /> : <Redirect to="/login"/>}
+				{props.logged_in ? <Redirect to="/hotels" /> : <Redirect to="/login"/>}
 			</div>
 		</div>
 		);

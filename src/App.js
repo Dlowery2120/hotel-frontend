@@ -6,7 +6,7 @@ import SignUp from './components/SignUp.js';
 import Navigation from './components/Navigation.js';
 import CreateReservation from './components/CreateReservation.js';
 import MyReservations from './components/MyReservations.js';
-import Home from './components/Home.js';
+import Hotels from './components/Hotels.js';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -202,9 +202,9 @@ class App extends React.Component {
 						<Route exact path="/" render={() => <Landing/>}/>
 						<Route
 							exact
-							path="/home"
+							path="/hotels"
 							render={(props) => (
-								<Home
+								<Hotels
 									currentUser={this.state.currentUser}
 									searchLocation={this.renderSearch}
 									logged_in={this.state.isLoggedIn}

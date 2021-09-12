@@ -16,7 +16,10 @@ const Navigation = (props) => {
 
 				<ul>
 					<li>
-					<a href='#'><Link to="/home">Home</Link></a>
+					<a href='#'><Link to="/">Home</Link></a>
+					</li>
+					<li>
+					<a href='#'><Link to="/hotels">Hotels</Link></a>
 					</li>
 					<li>
 					<a href='#'><Link to="/MyReservations">My Reservations</Link></a>

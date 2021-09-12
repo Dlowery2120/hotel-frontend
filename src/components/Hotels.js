@@ -1,8 +1,8 @@
 import Search from './Search'
-import HotelList from '../components/HotelList';
+import HotelList from './HotelList';
 import {withRouter} from 'react-router-dom';
 import React from 'react';
-class Home extends React.Component {
+class Hotels extends React.Component {
     render() {
             return(
     <div>
@@ -16,4 +16,4 @@ class Home extends React.Component {
 
 }
 
-export default withRouter(Home)
+export default withRouter(Hotels)
