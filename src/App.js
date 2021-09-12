@@ -197,7 +197,8 @@ class App extends React.Component {
 			<div className="App">
 				<Router>
 					<Navigation 
-						logout={this.handleLogOut} />
+						logout={this.handleLogOut}
+						logged_in={this.state.isLoggedIn} />
 					<Switch>
 						<Route exact path="/" render={() => <Landing/>}/>
 						<Route

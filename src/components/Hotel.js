@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from "react-router-dom";
-
+import {withRouter} from 'react-router-dom'
 
 class Hotel extends React.Component {
 	state = {
@@ -41,4 +41,4 @@ class Hotel extends React.Component {
 
 };
 
-export default Hotel;
+export default withRouter(Hotel);
