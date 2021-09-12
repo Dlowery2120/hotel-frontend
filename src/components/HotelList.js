@@ -9,7 +9,7 @@ class HotelList extends React.Component {
 
             <div id="thumbs">       
                 <h1>Available Hotels</h1>
-                {this.props.hotels.map(hotel => <Hotel key={hotel.id} hotel={hotel} clickedHotel={this.props.clickedHotel} />)}
+                {this.props.hotels.map(hotel => <Hotel key={hotel.id} hotel={hotel} clickedHotel={this.props.clickedHotel} logged_in={this.props.logged_in}/>)}
                 {/* {this.clickedHotel ? this.props.rooms.map(room => <Room key={room.id} room={room}/>) : null} */}
                 {console.log(this.props)}
             </div>

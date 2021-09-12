@@ -7,9 +7,9 @@ class Hotels extends React.Component {
             return(
     <div>
         <Search searchLocation={this.props.searchLocation} />
-		<HotelList hotels={this.props.hotels} clickedHotel={this.props.clickedHotel} />
+		<HotelList hotels={this.props.hotels} clickedHotel={this.props.clickedHotel} logged_in={this.props.logged_in}/>
         {console.log(this.props.hotels)}
-        	{this.props.logged_in ? null : this.props.history.push('/login')}
+
     </div>
     )
     }
