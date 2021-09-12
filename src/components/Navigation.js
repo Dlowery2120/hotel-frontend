@@ -27,12 +27,6 @@ const Navigation = (props) => {
 					<a href='#' onClick={(e)=>handleClick(e)}>Sign Out</a>
 					</li>
 				</ul>
-				<div class="menu-bars" id="toggle">
-					<input type="checkbox" />
-					<span />
-					<span />
-					<span />
-				</div>
 			</nav>
 			:
 			<nav>
@@ -50,12 +44,6 @@ const Navigation = (props) => {
 					<a href='#'><Link to="/signup">Sign Up</Link></a>
 					</li>
 				</ul>
-				<div class="menu-bars" id="toggle">
-					<input type="checkbox" />
-					<span />
-					<span />
-					<span />
-				</div>
 			</nav>
 			}
 		</div>

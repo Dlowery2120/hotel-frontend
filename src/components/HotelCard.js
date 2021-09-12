@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
-class Hotel extends React.Component {
+class HotelCard extends React.Component {
 	state = {
 		toggleRedirect: false
 	};
@@ -49,4 +49,4 @@ class Hotel extends React.Component {
 	}
 }
 
-export default withRouter(Hotel);
+export default withRouter(HotelCard);

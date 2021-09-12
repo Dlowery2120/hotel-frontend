@@ -1,5 +1,5 @@
 import React from 'react'
-import Hotel from './Hotel'
+import Hotel from './HotelCard'
 import Room from './Room'
 class HotelList extends React.Component {
 
