@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import Landing from './components/Landing.js';
 import Login from './components/Login.js';
 import SignUp from './components/SignUp.js';
 import Navigation from './components/Navigation.js';
@@ -198,7 +199,7 @@ class App extends React.Component {
 					<Navigation 
 						logout={this.handleLogOut} />
 					<Switch>
-						<Route exact path="/" />
+						<Route exact path="/" render={() => <Landing/>}/>
 						<Route
 							exact
 							path="/home"
