@@ -26,7 +26,7 @@ body {
  padding:0;
 }
 
-nav{
+/* nav{
 display:flex;
 background-color: hsl(0, 0%, 0%);
 justify-content: space-around;
@@ -35,7 +35,7 @@ margin-bottom: 20px;
 color:rgb(255, 254, 254);
 
 align-items: center;
-}
+} */
 nav.logo{
 letter-spacing: 3px;
 }
@@ -179,8 +179,13 @@ h1{
   text-align: center;
   top : 0;
 }
-.bottom{
+h4{
   color: #ffffff;
+  text-align: center;
+  top : 0;
+}
+.bottom{
+  color: #6897bb;
   display: flex;
 	flex-direction: column;
   padding: 2%;
@@ -194,7 +199,7 @@ h1{
 	margin: 10px 0 0;
 }
 .bottom p{
-  color: #Ff6fa5;
+  color: white;
 font-weight: 500;
 	font-size: medium;
 	margin: 3px 0;
@@ -223,7 +228,7 @@ font-weight: 500;
 }
 
 .styled-btn{
-  background: rgb(240, 26, 97);
+  background: #6897bb;
   padding: 15px 35px;
   border: none;
   outline: none;
@@ -237,7 +242,7 @@ font-weight: 500;
   transition: .3s ease;
 }
 .styled-submit{
-  background: rgb(240, 26, 97);
+  background: #6897bb;
   border: none;
   outline: none;
   color: white;
@@ -322,7 +327,7 @@ input {
 .container .login form .row textarea:focus + span,
 .container .login form .row input:valid + span ,
 .container .login form .row textarea:valid + span{
-  color: #fff;  background: #e91e63;
+  color: #fff;  background: #6897bb;
   top: -20px;
 }
 .container .login form .row:last-child{
@@ -332,7 +337,7 @@ input {
 .container .login form .row input[type = 'submit']{
   width: auto;
   border: none;
-  color: #fff;  background: #e91e63;
+  color: #fff;  background: #6897bb;
   padding: 10px 20px;
   border-radius: 50px;
   cursor: pointer;
@@ -346,4 +351,145 @@ form {
 .myReservation {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:400:300:500:600);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  height: 3em;
+  background-color: #6897bb;
+  color: #efefef;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+nav h4 {
+  display: inline-block;
+  margin: 0;
+  padding: 5px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+@media(max-width:320px){
+  nav h4 {
+    margin-left:30px;
+  }
+}
+
+aside {
+  color: #fff;
+  width: 0;
+  height: 100vh;
+  padding-top: 10px;
+  background-image: linear-gradient(30deg, #0048bd, #44a7fd);
+  position: absolute;
+  top: 0;
+  transition: width 0.5s ease-in-out;
+  font-weight: 600;
+}
+
+aside a {
+  font-size: 1em;
+  color: #fff;
+  display: block;
+  padding: 12px 12px 12px 30px;
+  margin: 20px auto;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+aside > div {
+  margin-top: 3em;
+}
+
+aside a:hover {
+  color: #6897bb;
+  background: #fff;
+  outline: none;
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px 0 0 20px;
+}
+
+aside a i {
+  margin-right: 5px;
+}
+
+i.fa-sign-out-alt {
+  margin-left: 5px;
+}
+
+aside hr {
+  opacity: 0;
+}
+
+label#close,
+label#view {
+  position: absolute;
+  margin: 0 35px 0 10px;
+  color: #efefef;
+  padding: 10px 0;
+  font-size: 22px;
+  width: 25px;
+  text-align: center;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+}
+
+label#close {
+  opacity: 0;
+}
+
+input#sideMenuTrigger:checked ~ aside {
+  width: 250px;
+  padding-left: 20px;
+}
+
+input#sideMenuTrigger:checked ~ label#close,
+input#sideMenuTrigger:checked ~ aside a,
+input#sideMenuTrigger:checked ~ aside hr {
+  opacity: 1;
+  transition: opacity 1.8s ease-in-out;
+}
+
+input#sideMenuTrigger:checked ~ label#close {
+  transition-duration: 0.5s;
+}
+
+input#sideMenuTrigger:not(:checked) ~ aside a {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  z-index: -999;
+}
+
+input#sideMenuTrigger:checked ~ label#view {
+  opacity: 0;
+}
+
+.landing-img {
+  width: 80%
 }

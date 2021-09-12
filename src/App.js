@@ -1,11 +1,12 @@
 import './App.css';
 import React from 'react';
+import Landing from './components/Landing.js';
 import Login from './components/Login.js';
 import SignUp from './components/SignUp.js';
 import Navigation from './components/Navigation.js';
 import CreateReservation from './components/CreateReservation.js';
 import MyReservations from './components/MyReservations.js';
-import Home from './components/Home.js';
+import Hotels from './components/Hotels.js';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 class App extends React.Component {
@@ -196,14 +197,15 @@ class App extends React.Component {
 			<div className="App">
 				<Router>
 					<Navigation 
-						logout={this.handleLogOut} />
+						logout={this.handleLogOut}
+						logged_in={this.state.isLoggedIn} />
 					<Switch>
-						<Route exact path="/" />
+						<Route exact path="/" render={() => <Landing/>}/>
 						<Route
 							exact
-							path="/home"
+							path="/hotels"
 							render={(props) => (
-								<Home
+								<Hotels
 									currentUser={this.state.currentUser}
 									searchLocation={this.renderSearch}
 									logged_in={this.state.isLoggedIn}

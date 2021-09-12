@@ -32,7 +32,7 @@ class SignUp extends React.Component {
 						<input type="submit" value="Join"/>
 					</div>
 				</form>
-			{this.props.logged_in ? this.props.history.push('/home'): null}
+			{this.props.logged_in ? this.props.history.push('/hotels'): null}
 			</div>
 		</div>
 	);

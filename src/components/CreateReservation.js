@@ -27,8 +27,8 @@ class CreateReservation extends React.Component {
 			<div>
 				<h1>Create Reservation</h1>
 				<form onSubmit={this.handleSubmit}>
-					<input type="date" name="check_in" onChange={this.changeHandler} />
-					<input type="date" name="check_out" onChange={this.changeHandler} />
+					<input type="date" name="check_in" onChange={this.changeHandler} required/>
+					<input type="date" name="check_out" onChange={this.changeHandler} required/>
 					{this.props.rooms.map((room) => <Room key={room.id} room={room} clickedRoom={this.clickedRoom} />)}
 					<input className="styled-submit" type="submit" value='Confirm Reservation'></input>
 				</form>
